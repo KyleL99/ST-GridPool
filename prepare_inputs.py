@@ -252,7 +252,7 @@ class prepare():
         image_features=torch.cat(tmp_features,dim=1)
         return image_features
     
-    def prepare_unit(self, frames, num_frames, contexts=None, pool_func=Identity, grid_size=1, grid_size_list=[], grid_freq_list=[], num_sampled_tokens=-1, sample_type='linear', vila=False, **pool_kwargs):
+    def prepare_unit(self, frames, num_frames, contexts=None, pool_func=L2NormAvgPool2d, grid_size=1, grid_size_list=[], grid_freq_list=[], num_sampled_tokens=-1, sample_type='linear', vila=False, **pool_kwargs):
         try:
             sampled_frames, indices = uniformly_sample_frames(frames, num_samples=num_frames)
         except:
