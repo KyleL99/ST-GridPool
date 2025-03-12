@@ -1,18 +1,18 @@
 # Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding
 
-![abstract](figs\abstract.png)
+![abstract](figs/abstract.png)
 
 We presented ST-GridPool, a training-free visual token enhancement method tailored for Video LLMs, which optimizes spatiotemporal token compression through Pyramid Temporal Gridding (PTG) and Norm-based Spatial Pooling (NSP). By capturing multi-grained temporal dynamics and preserving high-information spatial regions, our method significantly enhances video understanding performance across multiple datasets and models, including LLaVA-Video, without requiring retraining. ST-GridPool offers a scalable and efficient solution for improving visual token representations, demonstrating its potential as a plug-and-play enhancement for existing Video LLMs. 
 
-![method](figs\method.png)
+![method](figs/method.png)
 
 We conduct experiments on various datasets, demonstrating effectiveness of our method.
 
-![results](figs\results.png)
+![results](figs/results.png)
 
 Some examples collected from the experiment result of LongVideoBench.  
 
-![example](figs\example.png)
+![example](figs/example.png)
 
 
 ## Environment Setup
