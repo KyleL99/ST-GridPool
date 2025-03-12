@@ -1,0 +1,117 @@
+{
+  "results": {
+    "egoschema": {
+      "alias": "egoschema",
+      "submission,none": null,
+      "submission_stderr,none": "N/A",
+      "score,none": [],
+      "score_stderr,none": []
+    }
+  },
+  "group_subtasks": {
+    "egoschema": []
+  },
+  "configs": {
+    "egoschema": {
+      "task": "egoschema",
+      "dataset_path": "lmms-lab/egoschema",
+      "dataset_name": "GENERATION",
+      "dataset_kwargs": {
+        "token": true
+      },
+      "test_split": "test",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function egoschema_doc_to_visual at 0x7f8781786c20>",
+      "doc_to_text": "<function egoschema_doc_to_text at 0x7f8780e844c0>",
+      "doc_to_target": "<function egoschema_doc_to_answer at 0x7f8780e84f70>",
+      "process_results": "<function egoschema_process_results_generation at 0x7f8780e85bd0>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "submission",
+          "aggregation": "<function egoschema_aggregate_mc at 0x7f8780e86710>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "\n\n"
+        ],
+        "do_sample": false
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "lmms_eval_specific_kwargs": {
+        "default": {
+          "pre_prompt": "",
+          "post_prompt": "\nAnswer with the option's letter from the given choices directly."
+        },
+        "aria": {
+          "pre_prompt": "Please answer the question about the video:\n",
+          "post_prompt": "\nAnswer with the option's letter from the given choices directly."
+        },
+        "pre_prompt": "",
+        "post_prompt": "\nAnswer with the option's letter from the given choices directly."
+      }
+    }
+  },
+  "versions": {
+    "egoschema": "Yaml"
+  },
+  "n-shot": {
+    "egoschema": 0
+  },
+  "higher_is_better": {
+    "egoschema": {
+      "submission": true
+    }
+  },
+  "n-samples": {
+    "egoschema": {
+      "original": 5031,
+      "effective": 5031
+    }
+  },
+  "config": {
+    "model": "llava_video",
+    "model_args": "pretrained=../model/llava-video,conv_template=qwen_1_5,model_name=llava_qwen,max_frames_num=64",
+    "prepare_config": "",
+    "video_token_shape": [
+      1,
+      10816,
+      3584
+    ],
+    "batch_size": "1",
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": "",
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "18b200a",
+  "date": "20250311_015938",
+  "task_hashes": {
+    "egoschema": "1a900dcb1f3c0c83442bbd5c7d79aef2daf4e945efa121d06223f0fba1b9d65f"
+  },
+  "model_source": "llava_video",
+  "model_name": "../model/llava-video",
+  "model_name_sanitized": "model__llava-video",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 5493435.668323447,
+  "end_time": 5504160.969653248,
+  "total_evaluation_time_seconds": "10725.30132980086"
+}
