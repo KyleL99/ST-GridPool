@@ -21,7 +21,10 @@ Please refer to https://github.com/EvolvingLMMs-Lab/lmms-eval
 
 ```bash
 conda create --name exp1 python=3.10
+conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install flash-attn==2.5.0 --no-build-isolation
 pip install -e .
+pip install open-clip-torch==2.29.0
 ```
 
 ## Evaluation
@@ -29,6 +32,20 @@ pip install -e .
 We provide example scripts for reproducing results of our method. Raw logs of experimental results are put in 'logs/' directory.
 
 For most datasets, you can get the final scores by replacing `$TASK` with dataset name and running the following command:
+
+```bash
+TASK=videomme
+python -m accelerate.commands.launch \
+    --num_processes=6 \
+    -m lmms_eval \
+    --model llava_video \
+    --model_args pretrained=../model/llava-video,conv_template=qwen_1_5,model_name=llava_qwen,max_frames_num=64\
+    --tasks $TASK \
+    --batch_size 1 \
+    --log_samples \
+    --log_samples_suffix llava_video_$TASK \
+    --output_path ./logs/
+```
 
 ```bash
 TASK=longvideobench_val_v
